@@ -2,7 +2,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 
-import { Interview } from "@/types";
+import type { Interview } from "@/types";
 
 import { CustomBreadCrumb } from "./custom-bread-crumb";
 import { useEffect, useState } from "react";
@@ -96,7 +96,7 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
 
   const generateAiResponse = async (data: FormData) => {
     const prompt = `
-        As an experienced prompt engineer, generate a JSON array containing 5 technical interview questions along with detailed answers based on the following job information. Each object in the array should have the fields "question" and "answer", formatted as follows:
+        As an experienced prompt engineer, generate a JSON array containing 5 technical interview questions along with detailed answers which should be different everytime u generate based on the following job information. Each object in the array should have the fields "question" and "answer", formatted as follows:
 
         [
           { "question": "<Question text>", "answer": "<Answer text>" },
@@ -117,6 +117,7 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
 
     return cleanedResponse;
   };
+  
 
   const onSubmit = async (data: FormData) => {
     try {
@@ -288,14 +289,24 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
           />
 
           <div className="w-full flex items-center justify-end gap-6">
-            <Button
+            {/* <Button
               type="reset"
               size={"sm"}
               variant={"outline"}
               disabled={isSubmitting || loading}
             >
               Reset
-            </Button>
+            </Button> */}
+            <Button
+  type="button"
+  size="sm"
+  variant="outline"
+  disabled={isSubmitting || loading}
+  onClick={() => form.reset()} // resets to default empty values
+>
+  Reset
+</Button>
+
             <Button
               type="submit"
               size={"sm"}

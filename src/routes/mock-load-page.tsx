@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { db } from "@/config/firebase.config";
-import { Interview } from "@/types";
+import type { Interview } from "@/types";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";

@@ -76,12 +76,12 @@ export const Footer = () => {
               <FooterLink to="/services/interview-prep">
                 Interview Preparation
               </FooterLink>
-              <FooterLink to="/services/career-coaching">
+              {/* <FooterLink to="/services/career-coaching">
                 Career Coaching
               </FooterLink>
               <FooterLink to="/services/resume-building">
                 Resume Building
-              </FooterLink>
+              </FooterLink> */}
             </ul>
           </div>
 

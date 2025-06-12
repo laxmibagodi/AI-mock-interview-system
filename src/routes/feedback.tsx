@@ -1,5 +1,5 @@
 import { db } from "@/config/firebase.config";
-import { Interview, UserAnswer } from "@/types";
+import type { Interview, UserAnswer } from "@/types";
 import { useAuth } from "@clerk/clerk-react";
 import {
   collection,

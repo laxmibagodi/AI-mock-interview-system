@@ -1,4 +1,4 @@
-import { Interview } from "@/types";
+import type { Interview } from "@/types";
 import { useNavigate } from "react-router-dom";
 import {
   Card,
@@ -15,6 +15,7 @@ interface InterviewPinProps {
   interview: Interview;
   onMockPage?: boolean;
 }
+
 
 export const InterviewPin = ({
   interview,

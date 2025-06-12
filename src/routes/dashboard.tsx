@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { db } from "@/config/firebase.config";
-import { Interview } from "@/types";
+import type { Interview } from "@/types";
 import { useAuth } from "@clerk/clerk-react";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { Plus } from "lucide-react";
@@ -55,7 +55,7 @@ export const Dashboard = () => {
         {/* headings */}
         <Headings
           title="Dashboard"
-          description="Create and start you AI Mock interview"
+          description="Create and start your AI Mock interview"
         />
         <Link to={"/generate/create"}>
           <Button size={"sm"}>

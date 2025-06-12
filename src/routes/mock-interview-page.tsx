@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Interview } from "@/types";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import type { Interview } from "@/types";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { LoaderPage } from "./loader-page";
